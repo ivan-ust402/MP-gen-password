@@ -5,8 +5,8 @@ const text = document.querySelector('.text');
 title.textContent = 'Password generator (генератор паролей)'
 text.textContent = 'To restart the application, refresh the page. (Для перезапуска приложения обновите страницу.)'
 
-// Набор символов, из которых будет генерироваться пароль
-let symbols = "1234567890!@#$%^&*()_+;:][}{/?.,\
+// Набор символов, из которых будет генерироваться пароль (35 + 52 - 1 = 86)
+let symbols = "1234567890!@#$%^&*()_+;:][}\"\'|{/?.,\
 qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"; //86 символов
 let password = '';
 
@@ -41,12 +41,33 @@ function generatePassword(passLength) {
  * @returns {number} длина пароля
  */
 function askPassLength() {
-    return parseInt(prompt("Enter the password length (Введите длину пароля):"));
+    return prompt("Enter the password length (Введите длину пароля):");
 }
 
 const mainFunc = () => {
-    generatePassword(askPassLength());
-    alert(`Your password (Ваш пароль): ${password}`);
+    password = ''
+    const length = askPassLength();
+    if (length === null) {
+        alert('Ваше действие привело к выходу из цикла приложения! Если вы хотите запустить заново приложение, обновите страницу!')
+        return
+    }
+    if (length === '0') {
+        alert('Длина пароля не может быть нулем!')
+        setTimeout(mainFunc, 100);
+    } else if (parseInt(length) && parseInt(length) > 0) {
+        generatePassword(length);
+        alert(`Your password (Ваш пароль): ${password}`);
+        setTimeout(mainFunc, 100);
+    } else if (parseInt(length) && parseInt(length) < 0) {
+        alert("Вы ввели отрицательное число! Попробуйте ввести заново!");
+        setTimeout(mainFunc, 100);
+    } else {
+        alert("Вы ввели не число! Попробуйте ввести заново!");
+        setTimeout(mainFunc, 100);
+    }
+    
 }
 
-setTimeout(mainFunc, 2000)
+setTimeout(() => {
+    mainFunc()
+}, 100)

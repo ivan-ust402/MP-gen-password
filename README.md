@@ -2,11 +2,11 @@
 
 ## Description(RU) (Описание)
 Скрипт предлагает пользователю ввести необходимую длину пароля, после чего гененрируется набор случайных знаков для пароля и выводится на экран.
-Попробовать сгененрировать свой собственный пароль можно перейдя по ссылке https://ivan-ust402.github.io/MP-game-quess/.
+Попробовать сгененрировать свой собственный пароль можно перейдя по ссылке https://ivan-ust402.github.io/MP-gen-password/.
 
 ## Description(En)
 The script prompts the user to enter the required password length, after which a set of random characters for the password is generated and displayed on the screen.
-You can try to generate your own password by following the link https://ivan-ust402.github.io/MP-game-quess/.
+You can try to generate your own password by following the link https://ivan-ust402.github.io/MP-gen-password/.
 
 ## Technologies used
 * JavaScript

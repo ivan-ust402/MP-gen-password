@@ -1,0 +1,12 @@
+.main {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(243, 237, 229);
+  flex-direction: column;
+}
+.title {
+  color: rgb(128, 38, 38);
+}
